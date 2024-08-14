@@ -1,0 +1,24 @@
+name: Workflow with inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      homedrive:
+        description: 'The home drive on the machine'
+        required: true
+      logLevel:
+        description: Log Level
+        default: warning
+        options:
+        - info
+        - warning
+        - debug
+      tag:
+        description: Apply tag after successfull test run
+        required: true
+        type: boolean
+      environment:
+        description: Environment to run test against
+        type: environment
+        required: true
+    
